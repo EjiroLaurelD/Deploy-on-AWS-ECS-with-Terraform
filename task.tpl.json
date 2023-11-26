@@ -1,0 +1,21 @@
+[  
+  {
+    "name": "${APP_NAME}",
+    "image": "aws_account_id.dkr.ecr.aws_region.amazonaws.com/my-ecr:latest",
+    "essential":true,
+    "portMappings": [
+      {
+        "containerPort": ${CONTAINER_PORT},
+        "hostPort": ${CONTAINER_PORT}
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "${REGION}",
+        "awslogs-stream-prefix": "app-logstream",
+        "awslogs-group": "${LOG_GROUP}"
+      }
+    }
+  }
+]
