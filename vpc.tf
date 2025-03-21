@@ -5,12 +5,15 @@ module "vpc" {
   name = "my-vpc"
   cidr = var.vpc_cidr
 
-  azs  = var.vpc_azs
+  azs             = var.vpc_azs
   private_subnets = var.private_subnets
-  public_subnets = var.public_subnets
+  public_subnets  = var.public_subnets
 
   create_igw             = true
   enable_nat_gateway     = true
   create_egress_only_igw = true
   single_nat_gateway     = true
+  enable_dns_hostnames   = true
+  enable_dns_support     = true
+
 }

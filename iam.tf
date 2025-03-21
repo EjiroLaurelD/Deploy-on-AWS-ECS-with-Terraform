@@ -1,11 +1,11 @@
 resource "aws_iam_role" "ecs_task_execution_role" {
-  name                = "ecsTaskExecutionRole"
-  assume_role_policy  = data.aws_iam_policy_document.execution_assume_role_policy.json
+  name               = "ecsTaskExecutionRole"
+  assume_role_policy = data.aws_iam_policy_document.execution_assume_role_policy.json
 }
 
 resource "aws_iam_role" "ecs_task_role" {
   name = "ecsTaskRole"
- 
+
   assume_role_policy = <<EOF
 {
  "Version": "2012-10-17",

@@ -1,12 +1,14 @@
 [  
   {
     "name": "${APP_NAME}",
-    "image": "aws_account_id.dkr.ecr.aws_region.amazonaws.com/my-ecr:latest",
+    "image": "spendsmart",
     "essential":true,
+    "cpu": 256,
+    "memory": 512,
     "portMappings": [
       {
-        "containerPort": ${CONTAINER_PORT},
-        "hostPort": ${CONTAINER_PORT}
+        "containerPort": 80,
+        "hostPort": 80
       }
     ],
     "logConfiguration": {
